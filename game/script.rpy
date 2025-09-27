@@ -31,6 +31,16 @@ define unknown = Character("??")
 define x = 0
 label start:
 
+    "欢迎来到我的游戏。"
+    menu:
+        "想要查看官方公告吗？"
+        "是的":
+            $ import webbrowser
+            $ webbrowser.open("https://user.qzone.qq.com/2483961050")
+            "我已经在您的默认浏览器中打开了公告页面。"
+        "不用了":
+            "好吧，那我们继续游戏。"
+
     # 显示一个背景。此处默认显示占位图，但您也可以在图片目录添加一个文件
     # （命名为 bg room.png 或 bg room.jpg）来显示。
 
