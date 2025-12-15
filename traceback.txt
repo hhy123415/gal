@@ -1,0 +1,24 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 34, in script call
+    init python:
+  File "renpy/common/00start.rpy", line 134, in script
+    if renpy.has_label("after_warp"):
+Exception: Possible infinite loop.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 34, in script call
+    init python:
+  File "renpy/common/00start.rpy", line 134, in script
+    if renpy.has_label("after_warp"):
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\execution.py", line 61, in check_infinite_loop
+    raise Exception("Possible infinite loop.")
+Exception: Possible infinite loop.
+
+Windows-10-10.0.22621 AMD64
+Ren'Py 8.1.1.23060707
+hhy找妈妈 0.11
+Fri Nov 21 22:22:01 2025

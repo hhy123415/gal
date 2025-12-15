@@ -30,7 +30,18 @@ define unknown = Character("??")
 # 游戏在此开始。
 define x = 0
 label start:
-
+    # 在script.rpy中
+    init python:
+        import sys
+        print("Python路径列表:")
+        for path in sys.path:
+            print(f"  {path}")
+        
+        # 检查python-packages是否在路径中
+        python_packages_paths = [p for p in sys.path if 'python-packages' in p]
+        print("找到的python-packages路径:")
+        for path in python_packages_paths:
+            print(f"  {path}")
     "欢迎来到我的游戏。"
     menu:
         "想要查看官方公告吗？"
