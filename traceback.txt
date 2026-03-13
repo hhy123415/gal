@@ -1,24 +1,67 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 34, in script call
-    init python:
-  File "renpy/common/00start.rpy", line 134, in script
-    if renpy.has_label("after_warp"):
-Exception: Possible infinite loop.
+  File "renpy/common/00start.rpy", line 207, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
+  File "renpy/common/00start.rpy", line 207, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 390, in <module>
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 317, in _m1_00gltest__gl_test
+    _gl_performance_test()
+  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
+    ui.interact(suppress_underlay=True, suppress_overlay=True)
+OSError: Couldn't find file 'gui/window_icon.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 34, in script call
-    init python:
-  File "renpy/common/00start.rpy", line 134, in script
-    if renpy.has_label("after_warp"):
-  File "g:\renpy\renpy-8.1.1-sdk\renpy\execution.py", line 61, in check_infinite_loop
-    raise Exception("Possible infinite loop.")
-Exception: Possible infinite loop.
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\main.py", line 670, in main
+    run(restart)
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\main.py", line 144, in run
+    renpy.execution.run_context(True)
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\execution.py", line 953, in run_context
+    context.run()
+  File "renpy/common/00start.rpy", line 207, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 444, in raise_
+  File "renpy/common/00start.rpy", line 207, in script call
+    call _gl_test
+  File "renpy/common/00gltest.rpy", line 390, in script
+    $ __gl_test()
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gltest.rpy", line 390, in <module>
+    $ __gl_test()
+  File "renpy/common/00gltest.rpy", line 317, in _m1_00gltest__gl_test
+    _gl_performance_test()
+  File "renpy/common/00gltest.rpy", line 342, in _gl_performance_test
+    ui.interact(suppress_underlay=True, suppress_overlay=True)
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\display\core.py", line 3536, in interact
+    self.start()
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\display\core.py", line 2406, in start
+    self.post_init()
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\display\core.py", line 2500, in post_init
+    self.set_icon()
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\display\core.py", line 2543, in set_icon
+    with renpy.loader.load(icon, directory="images") as f:
+  File "g:\renpy\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'gui/window_icon.png'.
 
-Windows-10-10.0.22621 AMD64
+Windows-10-10.0.26100 AMD64
 Ren'Py 8.1.1.23060707
 hhy找妈妈 0.11
-Fri Nov 21 22:22:01 2025
+Tue Mar 10 20:11:05 2026
